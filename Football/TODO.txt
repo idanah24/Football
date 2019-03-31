@@ -1,0 +1,3 @@
+﻿#1 - Add admin jquery
+#2 - Design & Connect
+#3 - add PartialView& WebGrid to ShowStaff and ShowPlayers in Home Controller
