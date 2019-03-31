@@ -1,0 +1,23 @@
+﻿@model Football.ViewModels.ViewModel
+@using Football.Models
+@{
+    ViewBag.Title = "showPlayers";
+}
+
+<h2>Contacts</h2>
+<hr />
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+    </tr>
+    @foreach (Contact contact in Model.contacts)
+    {
+        <tr>
+            <td>@contact.name</td>
+            <td>@contact.email</td>
+            <td>@contact.message</td>
+        </tr>
+    }
+</table>

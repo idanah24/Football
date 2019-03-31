@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+
+    <h1 class="display-4">Welcome to Football Club MVC Website</h1>
+    <p class="lead">
+        You can find all the information about our team here
+    </p>
+    <div class="text-center fa-5x">
+        <i class="far fa-futbol fa-spin"></i>
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col">
+        @Html.ActionLink("Our Players", "ShowPlayers", "Open", new { area = "" }, new { @class = "btn btn-outline-success" })
+    </div>
+    <div class="col">
+        @Html.ActionLink("Our Staff", "ShowStaff", "Open", new { area = "" }, new { @class = "btn btn-outline-success" })
+    </div>
+    @if (!User.Identity.IsAuthenticated) { 
+    <div class="col">
+        @Html.ActionLink("User Registration", "UserRegister", "Login", new { area = "" }, new { @class = "btn btn-outline-success" })
+    </div>
+    }
+</div>

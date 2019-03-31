@@ -1,0 +1,47 @@
+﻿@model Football.ViewModels.ViewModel
+@using Football.Models
+@{
+    ViewBag.Title = "SearchStaff";
+}
+
+<h2>Manage Staff</h2>
+<hr />
+<form action="SearchStaff" class="form-inline" method="post">
+
+    <div class="row">
+        <div class="col">
+            <label for="firstName"> Enter first name</label>
+        </div>
+        <div class="col">
+            <input name="srcFirstName" class="form-control" type="text" id="firstName" />
+        </div>
+        <div class="col">
+            <input id="Submit" type="submit" value="Search Staff" class="btn btn-outline-success mb-2" />
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Job</th>
+        <th>Age</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (Staff staff in Model.staffs)
+    {
+    <tr>
+        <td>@staff.firstName</td>
+        <td>@staff.lastName</td>
+        <td>@staff.job</td>
+        <td>@staff.age</td>
+        <td>
+            <form action="DeleteStaff" method="post">
+                <input name="delJob" type="hidden" value="@staff.job" />
+                <input type="submit" class="btn btn-outline-danger" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    }
+</table>

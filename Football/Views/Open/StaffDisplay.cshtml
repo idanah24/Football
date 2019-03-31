@@ -1,0 +1,14 @@
+﻿@model Football.ViewModels.ViewModel
+
+@{ 
+    WebGrid obj = new WebGrid(Model.staffs);
+}
+@obj.GetHtml(
+    htmlAttributes: new {@class="table"},
+    columns: obj.Columns(
+        obj.Column("firstName","First Name"),
+        obj.Column("lastName","Last Name"),
+        obj.Column("job","Job"),
+        obj.Column("age","Age")
+        )
+    )

@@ -1,0 +1,41 @@
+﻿@model Football.Models.Contact
+
+
+<h2>Contact</h2>
+
+
+<hr />
+@using (Html.BeginForm("SubmitContact", "Home", FormMethod.Post))
+{
+    <div class="form-group row">
+        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.name, new { @class = "form-control", id = "inputName" })
+            <small class="text-danger"> @Html.ValidationMessageFor(x => x.name)</small>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inputEmail" class="col-sm-2 col-form-label">E-mail</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.email, new { @class = "form-control", id = "inputEmail" })
+            <small class="text-danger">@Html.ValidationMessageFor(x => x.email)</small>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inputMessage" class="col-sm-2 col-form-label">Message</label>
+        <div class="col-sm-10">
+            @Html.TextAreaFor(m => m.message, new { @class = "form-control", id = "inputMessage" })
+            <small class="text-danger">@Html.ValidationMessageFor(x => x.message)</small>
+        </div>
+    </div>
+
+
+    <input class="btn btn-outline-primary" id="submit" type="submit" value="Submit Contact" />
+
+    <br />
+    <br />
+    @ViewBag.Message
+}
+

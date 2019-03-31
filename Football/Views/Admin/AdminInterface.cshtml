@@ -1,0 +1,12 @@
+﻿@model Football.Models.Admin
+
+@{
+    ViewBag.Title = "AdminInterface";
+}
+
+<h2>Admin Interface</h2>
+<hr />
+@Html.ActionLink("Manage Staff", "ShowSearchStaff", "Admin", new { @class = "btn btn-primary" })
+@Html.ActionLink("Manage Players", "ShowSearchPlayers", "Admin", new { @class = "btn btn-primary" })
+@Html.ActionLink("Add Admin", "AdminRegister", "Admin", new { @class = "btn btn-primary" })
+@Html.ActionLink("Show Contacts", "ShowContacts", "Admin", new { @class = "btn btn-primary" })

@@ -1,0 +1,9 @@
+﻿@model Football.ViewModels.ViewModel
+    @using Football.Models
+@{
+    ViewBag.Title = "showPlayers";
+}
+
+<h2>Players</h2>
+<hr />
+@Html.Partial("PlayersDisplay", Model)
